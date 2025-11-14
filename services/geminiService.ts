@@ -1,7 +1,6 @@
-
 import { GoogleGenAI, Modality } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.TRANSLATE_API_KEY });
 
 export const translateText = async (text: string): Promise<string> => {
   if (!text.trim()) {
