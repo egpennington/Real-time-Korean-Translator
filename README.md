@@ -56,7 +56,7 @@ This application is ready to be deployed on static hosting services like [Netlif
       - **Key**: `TRANSLATE_API_KEY`
       - **Value**: Your Google Gemini API key.
 4.  **Configure build settings:**
-    - **Build command**: Leave this blank.
+    - **Build command**: `echo "window.process = { env: { TRANSLATE_API_KEY: '$TRANSLATE_API_KEY' } };" > env.js`
     - **Publish directory**: Set this to the root directory (`.`).
 5.  **Deploy your site.** Netlify will automatically deploy your application.
 
@@ -75,8 +75,7 @@ of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
+furnished to do so, a aistudio-copy-text: 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 

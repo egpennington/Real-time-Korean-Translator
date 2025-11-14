@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useDebounce } from './hooks/useDebounce';
 import { translateText, textToSpeech } from './services/geminiService';
 import LanguagePanel from './components/LanguagePanel';
+import { ClearIcon } from './components/icons/ClearIcon';
 
 // Helper function to decode base64 string to Uint8Array as per guidelines
 function decode(base64: string): Uint8Array {
@@ -113,14 +114,32 @@ export default function App() {
     }
   };
 
+  const handleClear = () => {
+    setEnglishText('');
+    setKoreanText('');
+    setError(null);
+  };
+
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 font-sans p-4 sm:p-6 lg:p-8 flex flex-col">
-      <header className="text-center mb-8">
+      <header className="text-center mb-4">
         <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-400 to-indigo-600 text-transparent bg-clip-text">
           Real-time Translator
         </h1>
         <p className="text-gray-400 mt-2">English to Korean</p>
       </header>
+
+      <div className="flex justify-center mb-6">
+        <button
+          onClick={handleClear}
+          disabled={!englishText && !koreanText}
+          className="flex items-center gap-2 px-4 py-2 bg-gray-700 text-gray-300 rounded-lg hover:bg-gray-600 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Clear all text"
+        >
+          <ClearIcon className="w-5 h-5" />
+          <span>Clear</span>
+        </button>
+      </div>
       
       <main className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-6">
         <LanguagePanel
