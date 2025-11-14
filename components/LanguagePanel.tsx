@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { SpeakerIcon } from './icons/SpeakerIcon';
-import { LoadingSpinner } from './icons/LoadingSpinner';
+import { SpeakerIcon } from './icons/SpeakerIcon.tsx';
+import { LoadingSpinner } from './icons/LoadingSpinner.tsx';
 
 interface LanguagePanelProps {
   language: string;

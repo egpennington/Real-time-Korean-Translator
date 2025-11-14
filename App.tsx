@@ -1,9 +1,9 @@
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { useDebounce } from './hooks/useDebounce';
-import { translateText, textToSpeech } from './services/geminiService';
-import LanguagePanel from './components/LanguagePanel';
-import { ClearIcon } from './components/icons/ClearIcon';
+import { useDebounce } from './hooks/useDebounce.ts';
+import { translateText, textToSpeech } from './services/geminiService.ts';
+import LanguagePanel from './components/LanguagePanel.tsx';
+import { ClearIcon } from './components/icons/ClearIcon.tsx';
 
 // Helper function to decode base64 string to Uint8Array as per guidelines
 function decode(base64: string): Uint8Array {
