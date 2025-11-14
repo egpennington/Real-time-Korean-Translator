@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Real-time Korean Translator",
+  "description": "An application that translates English to Korean in real-time, with a text-to-speech feature to read the translation aloud.",
+  "requestFramePermissions": []
+}
