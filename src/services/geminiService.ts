@@ -1,7 +1,7 @@
 import { GoogleGenAI, Modality } from "@google/genai";
 
-// Use the environment variable injected into the window object by env.js
-const ai = new GoogleGenAI({ apiKey: (window as any).process.env.TRANSLATE_API_KEY });
+// FIX: As per guidelines, the API key must be obtained from `process.env.API_KEY`. This also resolves the TypeScript error with `import.meta.env`.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const translateText = async (text: string): Promise<string> => {
   if (!text.trim()) {
